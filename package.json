@@ -5,18 +5,22 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "tsc"
   },
   "peerDependencies": {
     "react": "^19",
     "react-dom": "^19",
-    "next": "^15"
+    "next": "^15 || ^16"
   },
   "dependencies": {
     "framer-motion": "^12",
