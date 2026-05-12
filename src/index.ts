@@ -29,6 +29,7 @@ export * from "./feedback/ProgressView";
 
 export * from "./navigation/NavigationLink";
 export * from "./navigation/TabView";
+export * from "./navigation/NavigationStack";
 
 export * from "./shapes/Circle";
 export * from "./shapes/Rectangle";

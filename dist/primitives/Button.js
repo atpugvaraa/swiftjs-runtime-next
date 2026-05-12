@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { motion } from "framer-motion";
-export const Button = ({ title, action, disabled = false, variant = "primary", className = "", style, ...props }) => {
+export const Button = ({ title, label, action, disabled = false, variant = "primary", className = "", style, ...props }) => {
     const variantClasses = {
         primary: disabled
             ? "bg-slate-400 text-slate-200 cursor-not-allowed"
@@ -17,5 +17,6 @@ export const Button = ({ title, action, disabled = false, variant = "primary", c
             action();
         }
     };
-    return (_jsx(motion.button, { className: `inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${variantClasses[variant]} ${className}`, style: style, onClick: handleClick, disabled: disabled, ...props, children: title }));
+    const displayLabel = label ?? title ?? "";
+    return (_jsx(motion.button, { className: `inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${variantClasses[variant]} ${className}`, style: style, onClick: handleClick, disabled: disabled, ...props, children: displayLabel }));
 };
